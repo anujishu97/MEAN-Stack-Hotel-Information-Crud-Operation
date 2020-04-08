@@ -1,0 +1,30 @@
+<h2 style="font-size:10w; text-align: center;">Registered User</h2>
+<table class="table table-hover">
+<thead>
+  <tr>
+    <td class="font-weight-bold">Customer Name</td>
+    <td class="font-weight-bold">Email-id</td>
+    <td class="font-weight-bold">Address</td>
+    <td class="font-weight-bold">Occupation</td>
+    <td class="font-weight-bold">Mobile No.</td>
+    <td class="font-weight-bold">Number Of Adult</td>
+    <td class="font-weight-bold">Number of Child</td>
+    <td class="font-weight-bold">Room No</td>
+    <td colspan="2" class="font-weight-bold">Action</td>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.c_name}}</td>
+    <td>{{customer.c_emailid}}</td>
+    <td>{{customer.c_address}}</td>
+    <td>{{customer.occupation}}</td>
+    <td>{{customer.c_mobileno}}</td>
+    <td>{{customer.numbers_of_adult}}</td>
+    <td>{{customer.numbers_of_child}}</td>
+    <td>{{customer.room_no}}</td>
+    <td><a [routerLink]="['/edit',customer._id]" class="btn btn-primary">Edit</a></td>
+    <td><button (click)="deleteCustomerData(customer._id)" class="btn btn-danger">Delete</button></td>
+  </tr> 
+</tbody>
+</table>
